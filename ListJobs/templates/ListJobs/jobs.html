@@ -1,9 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>Jobs List</title>
 </head>
-<body>
+<center><body>
+    <h2>GIS and Web Developing Jobs</h2>
+</body></center>
 
+<body>
+<body style="background-color:lightgoldenrodyellow;">
 </body>
+    <h2>Job details and links:</h2>
+     <ul>
+        {% for job in object_list %}
+            <li>Title: {{ job.title }}
+                Location: {{ job.location }}
+                Employer: {{ job.employer }}
+                Url: {{ job.url }}</li>
+        {% endfor %}
+     </ul>
+
+     <ul>
+        {% for job in object_list %}
+            <li><a href="//{{ job.pk }}">: {{ job.title }}</a>
+                {% if job.employer == "Futura Systems" %}
+                Employer: <a href="http://jobs.geosearch.com/JobSeeker/JobDetail.aspx?abbr=GEOSEARCH&jn=1079902&stats=y&utm_source=Indeed&utm_medium=organic&utm_campaign=Indeed">{{ job.employer }}</a>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+
 </html>
