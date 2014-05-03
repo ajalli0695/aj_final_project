@@ -10,19 +10,22 @@
 
 <style>body{
 
-    background-color: lightgoldenrodyellow;
+    background-image:url('http://www.lpi-tw.org/wp-content/uploads/2013/07/Information-technology.jpg');
+    background-repeat:no-repeat;
+    background-size:cover;
 }
 </style>
     <h2>Job details and links:</h2>
-     <ul>
+    <ol>
         {% for job in object_list %}
-            <li><b>Title:</b> {{ job.title }}
+           <li><b>Title:</b> {{ job.title }}
 
                 <div><b>Location:</b> {{ job.location }}</div>
 
                 <div><b>Employer:</b> {{ job.employer }}</div>
 
-                <b>Apply For Position:</b> <a href='{{ job.url }}' style="...">{{ job.url }}</a></li>
+                <b>Apply For Position:</b> <a href='{{ job.url }}' style="...">{{ job.url }}</a></li><br>
         {% endfor %}
-     </ul>
+     </ol>
 </html>
+
